@@ -7,14 +7,15 @@ const initialState = {
 const modalSlice = createSlice({
   name: "modal",
   initialState,
-  reducers: {},
+  reducers: {
+    openModal: (state) => {
+      state.isOpen = true;
+    },
+    closeModal: (state) => {
+      state.isOpen = false;
+    },
+  },
 });
 
 export default modalSlice.reducer;
-export const {
-  clearCart,
-  removeItem,
-  increaseAmount,
-  decreaseAmount,
-  calculateTotal,
-} = modalSlice.actions;
+export const { openModal, closeModal } = modalSlice.actions;
