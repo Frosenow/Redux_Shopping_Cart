@@ -33,7 +33,12 @@ export default function CartItem(item) {
         <p className="amount">{item.amount}</p>
         <button
           className="amount-btn"
-          onClick={() => dispatch(decreaseAmount(item.id))}
+          onClick={() => {
+            if (item.amount === 1) {
+              dispatch(removeItem(item.id));
+            }
+            dispatch(decreaseAmount(item.id));
+          }}
           disabled={item.amount <= 0}
         >
           <ChevronDown />
