@@ -1,13 +1,15 @@
-import { useAppDispatch } from "../hooks";
+import React from "react";
 
+import { useAppDispatch } from "../hooks";
 import { ChevronDown, ChevronUp } from "../icons";
 import {
   removeItem,
   increaseAmount,
   decreaseAmount,
 } from "../features/cart/cartSlice";
+import { CartItemType } from "../types/types";
 
-export default function CartItem(item) {
+export default function CartItem(item: CartItemType) {
   const dispatch = useAppDispatch();
 
   return (

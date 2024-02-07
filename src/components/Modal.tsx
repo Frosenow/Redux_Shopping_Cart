@@ -1,3 +1,5 @@
+import React from "react";
+
 import { useAppDispatch } from "../hooks";
 import { closeModal } from "../features/modal/modalSlice";
 import { clearCart } from "../features/cart/cartSlice";
