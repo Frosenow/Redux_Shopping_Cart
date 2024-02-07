@@ -1,11 +1,11 @@
-import { useSelector, useDispatch } from "react-redux";
+import { useAppDispatch, useAppSelector } from "../hooks";
 
 import CartItem from "./CartItem";
 import { openModal } from "../features/modal/modalSlice";
 
 export default function CartContainer() {
-  const { cartItems, total, amount } = useSelector((store) => store.cart);
-  const dispatch = useDispatch();
+  const { cartItems, total, amount } = useAppSelector((store) => store.cart);
+  const dispatch = useAppDispatch();
 
   if (amount < 1) {
     return (

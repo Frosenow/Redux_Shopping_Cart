@@ -1,8 +1,8 @@
-import { useSelector } from "react-redux";
+import { useAppSelector } from "../hooks";
 import { CartIcon } from "../icons";
 
 export default function Navbar() {
-  const { amount } = useSelector((store) => store.cart);
+  const { amount } = useAppSelector((store) => store.cart);
   return (
     <nav>
       <div className="nav-center">

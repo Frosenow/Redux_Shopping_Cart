@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useAppDispatch } from "../hooks";
 
 import { ChevronDown, ChevronUp } from "../icons";
 import {
@@ -8,7 +8,7 @@ import {
 } from "../features/cart/cartSlice";
 
 export default function CartItem(item) {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
 
   return (
     <article className="cart-item">
