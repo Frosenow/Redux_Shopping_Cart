@@ -6,7 +6,6 @@ import { openModal } from "../features/modal/modalSlice";
 export default function CartContainer() {
   const { cartItems, total, amount } = useAppSelector((store) => store.cart);
   const dispatch = useAppDispatch();
-
   if (amount < 1) {
     return (
       <section className="cart">
