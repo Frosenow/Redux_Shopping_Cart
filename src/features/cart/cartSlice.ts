@@ -1,4 +1,9 @@
-import { createSlice, createAsyncThunk, PayloadAction } from "@reduxjs/toolkit";
+import {
+  createSlice,
+  createAsyncThunk,
+  PayloadAction,
+  ThunkAction,
+} from "@reduxjs/toolkit";
 import axios from "axios";
 
 import { CartItemType } from "../../types/types";
@@ -73,13 +78,10 @@ const cartSlice = createSlice({
       .addCase(getCartItems.pending, (state) => {
         state.isLoading = true;
       })
-      .addCase(
-        getCartItems.fulfilled,
-        (state, action: PayloadAction<CartItemType[]>) => {
-          state.isLoading = false;
-          state.cartItems = action.payload;
-        }
-      )
+      .addCase(getCartItems.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.cartItems = action.payload;
+      })
       .addCase(getCartItems.rejected, (state) => {
         state.isLoading = false;
       });
